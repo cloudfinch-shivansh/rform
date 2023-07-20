@@ -1,58 +1,131 @@
-<template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
-</template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+    name: 'HelloWorld',
+    data() {
+        return {
+            name: '',
+            email: '',
+            phoneno: '',
+            address: '',
+            gender: '',
+            Dateofbirth: '',
+        }
+    },
+    methods: {
+        next() {
+            if (!(this.name && this.email && this.phoneno && this.address && this.gender && this.Dateofbirth)) {
+                alert("please fill the value");
+                return;
+            }
+            this.$router.push({ name: "HomeHome", params: { name: this.name, email: this.email, phoneno: this.phoneno, address: this.address, gender: this.gender, Dateofbirth: this.Dateofbirth } })
+        },
+    }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
+<template>
+    <div id="general-info-page">
+        <h1>General Information</h1>
+        <div class="form-group">
+            <label><b>Name</b></label>
+            <input v-model="name" />
+        </div>
+        <div class="form-group">
+            <label><b>Email</b></label>
+            <input type="email" v-model="email" />
+        </div>
+        <div class="form-group">
+            <label><b>Phone No</b></label>
+            <input type="number" v-model="phoneno" />
+        </div>
+        <div class="form-group">
+            <label><b>Address</b></label>
+            <input v-model="address" />
+        </div>
+        <div class="form-group">
+            <label><b>Gender</b></label>
+            <select v-model="gender">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Others</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label><b>Date of Birth</b></label>
+            <input type="date" v-model="dateOfBirth" />
+        </div>
+        <button @click="next">Next</button>
+    </div>
+</template>
+  
+  <script>
+  export default {
+    // ... your Vue component options ...
+    methods: {
+      next() {
+        // ... your next method logic ...
+      },
+    },
+  };
+  </script>
+  
+<style>
+/* Dark theme styles */
+body {
+    background-color: #232323;
+    /* Dark gray background color */
+    color: #fff;
+    /* Light text color */
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+#general-info-page {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 600px;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
 }
-a {
-  color: #42b983;
+
+label {
+    font-weight: bold;
 }
-</style>
+
+input,
+select {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #2b2b2b;
+    /* Darker gray background color for input fields */
+    color: #fff;
+    /* Light text color for input fields */
+}
+
+select {
+    appearance: none;
+    /* Remove default arrow for select element */
+    cursor: pointer;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    /* Green button background color */
+    color: #fff;
+    /* Light text color for buttons */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    /* Darker green on hover */
+}</style>
+  
