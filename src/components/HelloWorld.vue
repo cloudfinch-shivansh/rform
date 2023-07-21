@@ -9,16 +9,16 @@ export default {
             phoneno: '',
             address: '',
             gender: '',
-            Dateofbirth: '',
+            dateOfBirth: '',
         }
     },
     methods: {
         next() {
-            if (!(this.name && this.email && this.phoneno && this.address && this.gender && this.Dateofbirth)) {
+            if (!(this.name && this.email && this.phoneno && this.address && this.gender && this.dateOfBirth)) {
                 alert("please fill the value");
                 return;
             }
-            this.$router.push({ name: "HomeHome", params: { name: this.name, email: this.email, phoneno: this.phoneno, address: this.address, gender: this.gender, Dateofbirth: this.Dateofbirth } })
+            this.$router.push({ name: "HomeHome", params: { name: this.name, email: this.email, phoneno: this.phoneno, address: this.address, gender: this.gender, Dateofbirth: this.dateOfBirth } })
         },
     }
 }
@@ -45,11 +45,7 @@ export default {
         </div>
         <div class="form-group">
             <label><b>Gender</b></label>
-            <select v-model="gender">
-                <option>Male</option>
-                <option>Female</option>
-                <option>Others</option>
-            </select>
+            <input v-model="gender" />
         </div>
         <div class="form-group">
             <label><b>Date of Birth</b></label>
@@ -58,17 +54,6 @@ export default {
         <button @click="next">Next</button>
     </div>
 </template>
-  
-  <script>
-  export default {
-    // ... your Vue component options ...
-    methods: {
-      next() {
-        // ... your next method logic ...
-      },
-    },
-  };
-  </script>
   
 <style>
 /* Dark theme styles */
@@ -127,5 +112,6 @@ button {
 button:hover {
     background-color: #45a049;
     /* Darker green on hover */
-}</style>
+}
+</style>
   
