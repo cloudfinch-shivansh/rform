@@ -1,6 +1,7 @@
 
 <script>
 export default {
+    name: 'FinalSubmit',
     data() {
         return {
             name: '',
@@ -8,7 +9,7 @@ export default {
             phoneno: '',
             address: '',
             gender: '',
-            Dateofbirth: '',
+            dateOfBirth: '',
             collegename: '',
             courseName: '',
             stream: '',
@@ -23,7 +24,7 @@ export default {
         this.phoneno = this.$route.params.phoneno;
         this.address = this.$route.params.address;
         this.gender = this.$route.params.gender;
-        this.Dateofbirth = this.$route.params.Dateofbirth;
+        this.dateOfBirth = this.$route.params.dateOfBirth;
         this.collegename = this.$route.params.collegename;
         this.coursename = this.$route.params.coursename;
         this.stream = this.$route.params.stream;
@@ -46,7 +47,7 @@ export default {
                 <p><b> PHONENO: </b><u>{{ this.phoneno }}</u></p>
                 <p><b> ADDRESS: </b><u>{{ this.address }}</u></p>
                 <p><b> GENDER: </b><u>{{ this.gender }}</u></p>
-                <p><b> DATEOFBIRTH: </b><u>{{ this.dateOfBirth }}</u></p>
+                <p><b> dateOfBirth: </b><u>{{ this.dateOfBirth }}</u></p>
                 <p><b> COLLEGENAME: </b><u>{{ this.collegename }}</u></p>
                 <p><b> COURSENAME: </b><u>{{ this.coursename }}</u></p>
                 <p><b> STREAM: </b><u>{{ this.stream }}</u></p>
@@ -56,12 +57,6 @@ export default {
         </div>
     </div>
 </template>
-  
-  <script>
-  export default {
-    // ... your Vue component options ...
-  };
-  </script>
   
 <style>
 /* Dark theme styles */

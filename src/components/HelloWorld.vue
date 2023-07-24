@@ -1,4 +1,3 @@
-
 <script>
 export default {
     name: 'HelloWorld',
@@ -18,7 +17,7 @@ export default {
                 alert("please fill the value");
                 return;
             }
-            this.$router.push({ name: "HomeHome", params: { name: this.name, email: this.email, phoneno: this.phoneno, address: this.address, gender: this.gender, Dateofbirth: this.dateOfBirth } })
+            this.$router.push({ name: "HomeHome", params: { name: this.name, email: this.email, phoneno: this.phoneno, address: this.address, gender: this.gender, dateOfBirth: this.dateOfBirth } })
         },
     }
 }

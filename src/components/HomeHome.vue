@@ -7,7 +7,7 @@ export default {
             phoneno: '',
             address: '',
             gender: '',
-            Dateofbirth: '',
+            dateOfBirth: '',
             collegename: '',
             coursename: '',
             stream: '',
@@ -21,13 +21,13 @@ export default {
         this.phoneno = this.$route.params.phoneno;
         this.address = this.$route.params.address;
         this.gender = this.$route.params.gender;
-        this.Dateofbirth = this.$route.params.Dateofbirth;
+        this.dateOfBirth = this.$route.params.dateOfBirth;
     },
     mounted() {
     },
     methods: {
         submit() {
-            this.$router.push({ name: "FinalSubmit", params: { name: this.name, email: this.email, phoneno: this.phoneno, address: this.address, gender: this.gender, Dateofbirth: this.Dateofbirth, collegename: this.collegename, coursename: this.coursename, stream: this.stream, rollno: this.rollno, cgpa: this.cgpa } })
+            this.$router.push({ name: "FinalSubmit", params: { name: this.name, email: this.email, phoneno: this.phoneno, address: this.address, gender: this.gender, dateOfBirth: this.dateOfBirth, collegename: this.collegename, coursename: this.coursename, stream: this.stream, rollno: this.rollno, cgpa: this.cgpa } })
         }
     }
 }
